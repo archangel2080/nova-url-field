@@ -111,6 +111,36 @@ class Url extends Text
         return $this->label($this->name);
     }
 
+    public function showClickableUrlFieldOnForms($show = true)
+    {
+        $this->showClickableUrlFieldOnCreate($show);
+        $this->showClickableUrlFieldOnUpdate($show);
+    }
+
+    /**
+     * Whether the URL should be displayed on create page
+     *
+     * @param bool $show
+     *
+     * @return $this
+     */
+    public function showClickableUrlFieldOnCreate($show = true)
+    {
+        return $this->withMeta(['showClickableUrlOnCreate' => $show]);
+    }
+
+    /**
+     * Whether the URL should be displayed on update page
+     *
+     * @param bool $show
+     *
+     * @return $this
+     */
+    public function showClickableUrlFieldOnUpdate($show = true)
+    {
+        return $this->withMeta(['showClickableUrlOnUpdate' => $show]);
+    }
+
     /**
      * Whether the URL should be displayed as a clickable
      * link on the detail page.
